@@ -1,0 +1,111 @@
+/* ---------------------------------------------------------------------------
+** I attest that this following code represents our own work and is subject to
+** the plagiarism policy found in the course syllabus.
+**
+** Class: 	CSC 242
+** Assignment: 	Lesson 4
+** File: 	source.cpp
+** Description: Assignment 5B, Cipher 
+**
+** Author: 	Liam Byrne
+** Date: 	8/23/25
+** -------------------------------------------------------------------------*/
+
+// step one create two arrays with 26 elements 
+// define the first array to be the standard alphebet
+// define second array as the legend to be created
+// define txt
+// define length of txt
+// define key word
+// 
+// function 01
+// take the given key and eliminate duplicated letters. Preserving the first location of each instance
+// define variable for current location of the changing elements in the legend array
+// insert the trunckated key into the legend, starting with position 0 and acending
+// begin adding elements from the alphebet decending from position 26 into the acending slots of the legend
+// if starting from alphebet[26] if charictor in alphebet is present in the legend then do nothing
+// else add charictor into current position
+// add to current position until position > 25 (array position for the 26th element)
+// array two is now our legend
+// 
+// function 02
+// take the txt and starting with charictor one ask if space, if so advance position by one
+// else if find corrisponding value from array one (alphebet) 
+// replace character in txt with corrisponding charictor from array two (legend)
+// repeat until position > length of txt (is txt an array of strings? need to reaserch)
+// 
+// main()
+// ask user to input message to be decripted
+// ask user to input key word
+// call function 01
+// call function 02
+// display new txt (in text form or as a file?)
+// ask if user wants the legend
+// if yes then tell them too BAD! its not so secret if i tell you the secret now is it!
+// if no then tell them GOOD! its not so secret if i tell you the secret now is it!
+// return 0
+//
+
+#include <iostream> 
+#include <math.h>
+#include <vector>
+#include <string>
+#include <fstream>
+//#include <sstream>
+
+using namespace std;
+
+string messagetxtraw;
+string key;
+
+//declare vars
+
+void function01()
+{
+
+}
+
+void function02()
+{
+
+}
+
+int main()
+{
+//	cyrpt - d - kInput encrypt.txt output.txt;
+	ofstream MessageRaw("message.txt");
+	ofstream EncriptedMessage("encriptedmessage.txt");
+	string OverWrite;
+	string TempDisplayMessage;
+	string key;
+	
+	if (!MessageRaw)
+	{
+		cout << "007 you have been comprimised! get out of there" << endl;
+		return 1;
+	}
+
+	cout << "welcome 007, please enter the message to be encripted: ";
+	getline(cin, OverWrite);
+	MessageRaw << OverWrite << endl;
+	MessageRaw.close();
+	string MessageBase;
+	fstream<MessageBase> ("message.txt", ios::in);
+
+	//MessageRaw("message.txt");
+	getline(MessageBase, TempDisplayMessage);
+	cout << "confirm this is your message: " << TempDisplayMessage << endl;
+
+
+
+	cout << endl << "next please enter the key word, remember never to reveal your keyword: ";
+	cin >> key;
+
+	function01();
+
+	function02();
+
+	MessageRaw.close();
+	return 0;
+}
+
